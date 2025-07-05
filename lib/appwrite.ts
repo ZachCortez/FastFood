@@ -4,10 +4,10 @@ import {CreateUserParams, GetMenuParams, SignInParams} from "@/type";
 export const appwriteConfig = {
     endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT!,
     projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
-    platform: "",
+    platform: "com.saturnbay.fastfood",
     databaseId: '6865e73900059dfb18fe',
     bucketId: '',
-    userCollectionId: '',
+    userCollectionId: '6868b16b00227ccbbad2',
     categoriesCollectionId: '',
     menuCollectionId: '',
     customizationsCollectionId: '',
