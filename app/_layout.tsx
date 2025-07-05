@@ -7,7 +7,7 @@ import * as Sentry from '@sentry/react-native';
 import useAuthStore from "@/store/auth.store";
 
 Sentry.init({
-    dsn: '',
+    dsn: 'https://7533eb7d475880ee6713413b88bcd9ef@o4509373198106624.ingest.us.sentry.io/4509617004412928',
 
     // Adds more context data to events (IP address, cookies, user, etc.)
     // For more information, visit: https://docs.sentry.io/platforms/react-native/data-management/data-collected/
@@ -24,7 +24,7 @@ Sentry.init({
 
 export default Sentry.wrap(function RootLayout() {
     const { isLoading, fetchAuthenticatedUser } = useAuthStore();
-
+    // Sentry.showFeedbackWidget();
     const [fontsLoaded, error] = useFonts({
         "QuickSand-Bold": require('../assets/fonts/Quicksand-Bold.ttf'),
         "QuickSand-Medium": require('../assets/fonts/Quicksand-Medium.ttf'),
@@ -47,4 +47,3 @@ export default Sentry.wrap(function RootLayout() {
     return <Stack screenOptions={{ headerShown: false }} />;
 });
 
-Sentry.showFeedbackWidget();
