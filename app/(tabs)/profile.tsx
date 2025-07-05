@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ActivityIndicator, Image, Button } from 'react-native';
-import { getCurrentUser, account } from '@/lib/appwrite'; // adjust path as needed
+import { View, Text, ActivityIndicator, Image, Pressable } from 'react-native';
+import { getCurrentUser, account } from '@/lib/appwrite';
+import { useRouter } from 'expo-router';
 
 const Profile = () => {
     const [user, setUser] = useState<any>(null);
     const [loading, setLoading] = useState(true);
+    const router = useRouter();
 
     useEffect(() => {
         const loadUser = async () => {
@@ -24,69 +26,50 @@ const Profile = () => {
     const handleLogout = async () => {
         try {
             await account.deleteSession('current');
-            // Navigate to login screen or update state here
+            router.replace('/sign-in'); // Change to your login route
         } catch (error) {
             console.error('Logout error:', error);
         }
     };
 
     if (loading) {
-        return <ActivityIndicator size="large" style={styles.loader} />;
+        return (
+            <View className="flex-1 justify-center items-center bg-white">
+                <ActivityIndicator size="large" />
+            </View>
+        );
     }
 
     if (!user) {
         return (
-            <View style={styles.container}>
-                <Text>No user found. Please log in.</Text>
+            <View className="flex-1 justify-center items-center bg-white px-6">
+                <Text className="text-lg font-semibold text-center text-red-500">
+                    No user found. Please log in.
+                </Text>
             </View>
         );
     }
 
     return (
-        <View style={styles.container}>
-            {user.avatar ? (
-                <Image source={{ uri: user.avatar }} style={styles.avatar} />
-            ) : null}
-            <Text style={styles.name}>{user.name}</Text>
-            <Text style={styles.email}>{user.email}</Text>
+        <View className="flex-1 bg-white items-center justify-center px-6">
+            {user.avatar && (
+                <Image
+                    source={{ uri: user.avatar }}
+                    className="w-28 h-28 rounded-full mb-5"
+                    resizeMode="cover"
+                />
+            )}
+            <Text className="text-2xl font-bold text-dark-100 mb-1">{user.name}</Text>
+            <Text className="text-base text-gray-500">{user.email}</Text>
 
-            <View style={styles.logoutButton}>
-                <Button title="Log Out" onPress={handleLogout} />
-            </View>
+            <Pressable
+                onPress={handleLogout}
+                className="mt-8 bg-red-500 px-6 py-3 rounded-xl w-full"
+            >
+                <Text className="text-white text-center font-semibold text-base">Log Out</Text>
+            </Pressable>
         </View>
     );
 };
 
 export default Profile;
-
-const styles = StyleSheet.create({
-    loader: {
-        flex: 1,
-        justifyContent: 'center',
-    },
-    container: {
-        flex: 1,
-        padding: 24,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    avatar: {
-        width: 120,
-        height: 120,
-        borderRadius: 60,
-        marginBottom: 20,
-    },
-    name: {
-        fontSize: 26,
-        fontWeight: '600',
-        marginBottom: 8,
-    },
-    email: {
-        fontSize: 18,
-        color: 'gray',
-    },
-    logoutButton: {
-        marginTop: 30,
-        width: '100%',
-    },
-});

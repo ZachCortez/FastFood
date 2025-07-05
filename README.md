@@ -84,8 +84,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/#######/food_#####.git
-cd food_Fast
+git clone https://github.com/ZachCortez/FastFood.git
+cd _food_fast_
 ```
 
 **Installation**
