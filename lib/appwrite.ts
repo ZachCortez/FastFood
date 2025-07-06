@@ -6,12 +6,12 @@ export const appwriteConfig = {
     projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
     platform: "com.saturnbay.fastfood",
     databaseId: '6865e73900059dfb18fe',
-    bucketId: '',
+    bucketId: '6869c8bf0003dff1d827',
     userCollectionId: '6868b16b00227ccbbad2',
-    categoriesCollectionId: '',
-    menuCollectionId: '',
-    customizationsCollectionId: '',
-    menuCustomizationsCollectionId: ''
+    categoriesCollectionId: '6869ba610017d0fc0026',
+    menuCollectionId: '6869bd0b0006915fc30c',
+    customizationsCollectionId: '6869c362000b16f1a5de',
+    menuCustomizationsCollectionId: '6869c7680033939fc949'
 }
 
 export const client = new Client();

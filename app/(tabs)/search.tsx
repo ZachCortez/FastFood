@@ -19,8 +19,11 @@ const Search = () => {
     const { data: categories } = useAppwrite({ fn: getCategories });
 
     useEffect(() => {
-        refetch({ category, query, limit: 6})
-    }, [category, query]);
+        if (category || query) {
+            refetch({ category, query, limit: 6 });
+        }
+    }, [category, query, refetch]);
+
 
     return (
         <SafeAreaView className="bg-white h-full">
