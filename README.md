@@ -36,13 +36,13 @@
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Smileys/Robot.webp" alt="Robot" width="25" height="25" align="center"/> Introduction
+## <a name="introduction"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Smileys/Robot.webp" alt="Robot" width="25" height="25" align="center"/> Introduction</a>
 
 **FastFood** is a cross-platform food delivery app built with React Native, TypeScript, and Tailwind CSS. It features a modern UI/UX, Google authentication, real-time search and filtering, cart management, and backend integration using Appwrite. The project was created to sharpen my mobile development skills while following scalable full-stack architecture practices.
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Food%20and%20Drink/Hamburger.webp" alt="Hamburger" width="25" height="25" align="center"/> Tech Stack
+## <a name="tech-stack"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Food%20and%20Drink/Hamburger.webp" alt="Hamburger" width="25" height="25" align="center"/> Tech Stack</a>
 
 - **[React Native](https://reactnative.dev/)** — Core framework for mobile development.
 - **[Expo](https://expo.dev/)** — React Native tooling for iOS/Android/web, EAS build & OTA updates.
@@ -54,7 +54,7 @@
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/High%20Voltage.webp" alt="High Voltage" width="25" height="25" align="center"/> Features
+## <a name="features"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/High%20Voltage.webp" alt="High Voltage" width="25" height="25" align="center"/> Features</a>
 
 - <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Locked%20With%20Key.webp" alt="Locked With Key" width="25" height="25" align="center"/>**Google Authentication** for fast and secure sign-in.
 - <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/House.webp" alt="House" width="25" height="25" align="center"/>**Home Page** to showcase promos and highlight items.
@@ -68,7 +68,7 @@
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Rocket.webp" alt="Rocket" width="25" height="25" align="center"/> Quick Start
+## <a name="quick-start"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel%20and%20Places/Rocket.webp" alt="Rocket" width="25" height="25" align="center"/> Quick Start</a>
 
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Briefcase.webp" alt="Briefcase" width="25" height="25" /> Prerequisites
 
@@ -105,7 +105,7 @@ npx expo start
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/File%20Folder.webp" alt="File Folder" width="25" height="25" align="center"/> Folder Structure
+## <a name="folder-structure"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/File%20Folder.webp" alt="File Folder" width="25" height="25" align="center"/> Folder Structure</a>
 
 ```bash
 FastFood/
@@ -121,7 +121,7 @@ FastFood/
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Graduation%20Cap.webp" alt="Graduation Cap" width="25" height="25" align="center"/> Learnings
+## <a name="learnings"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Graduation%20Cap.webp" alt="Graduation Cap" width="25" height="25" align="center"/> Learnings</a>
 
 * <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Mobile%20Phone%20With%20Arrow.webp" alt="Mobile Phone With Arrow" width="25" height="25" align="center"/> How to integrate Appwrite in a mobile environment.
 * <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Activity/Artist%20Palette.webp" alt="Artist Palette" width="25" height="25" align="center"/> Utility-first styling using NativeWind for Tailwind on React Native.
@@ -131,7 +131,7 @@ FastFood/
 
 ---
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Passport%20Control.webp" alt="Passport Control" width="25" height="25" align="center"/> License
+## <a name="license"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Passport%20Control.webp" alt="Passport Control" width="25" height="25" align="center"/> License</a>
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Free%20Button.webp" alt="Free Button" width="25" height="25" align="center"/>This project is licensed under the **MIT License** — feel free to use, modify, or contribute!
 
