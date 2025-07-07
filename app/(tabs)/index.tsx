@@ -9,8 +9,10 @@ import {
     View,
     ScrollView
 } from "react-native";
-import {Fragment, useState} from "react";
+import {Fragment, useState, useEffect} from "react";
 import cn from 'clsx';
+import ConfettiCannon from 'react-native-confetti-cannon';
+import {useLocalSearchParams, useRouter, usePathname } from 'expo-router';
 
 import CartButton from "@/components/CartButton";
 import {images, offers} from "@/constants";
@@ -22,9 +24,39 @@ export default function Index() {
     const { user } = useAuthStore();
     const [selectedCity, setSelectedCity] = useState("Charlotte");
     const [modalVisible, setModalVisible] = useState(false);
+    const [showConfetti, setShowConfetti] = useState(false);
+    const router = useRouter();
+    const params = useLocalSearchParams();
+    const pathname = usePathname();
+
+    useEffect(() => {
+        if (params?.justLoggedIn === 'true') {
+            setShowConfetti(true);
+
+            const timer = setTimeout(() => {
+                setShowConfetti(false);
+                router.replace('/'); // clear param
+            }, 3000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [params.justLoggedIn]);
+
+
+
 
     return (
         <SafeAreaView className="flex-1 bg-white">
+            {showConfetti && (
+                <ConfettiCannon
+                    count={120}
+                    origin={{ x: -10, y: 0 }}
+                    fadeOut
+                    explosionSpeed={400}
+                    fallSpeed={2500}
+                />
+            )}
+
             <FlatList
                 data={offers}
                 renderItem={({ item, index }) => {

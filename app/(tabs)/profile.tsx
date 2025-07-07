@@ -2,11 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import {
     View,
     Text,
+    StyleSheet,
     ActivityIndicator,
     Image,
     Pressable,
-    Alert,
-    TextInput,
+    Alert, Button,
+
 } from 'react-native';
 import ConfettiCannon from 'react-native-confetti-cannon'; // <-- import this
 import * as ImagePicker from 'expo-image-picker';
@@ -89,12 +90,41 @@ const Profile = () => {
     if (!user) {
         return (
             <View className="flex-1 justify-center items-center bg-white px-6">
-                <Text className="text-lg font-semibold text-center text-red-500">
+                <Text className="text-lg font-semibold text-center text-red-500 mb-4">
                     No user found. Please log in.
                 </Text>
+                <View className="w-full gap-y-3">
+                    <Pressable
+                        onPress={() => router.replace('/(auth)/sign-in')}
+                        className="bg-orange-500 py-3 rounded-xl"
+                    >
+                        <Text className="text-white text-center font-semibold text-base">
+                            Go to Sign In
+                        </Text>
+                    </Pressable>
+
+                    <Pressable
+                        onPress={() => router.replace('/(auth)/sign-up')}
+                        className="border border-orange-300 py-3 rounded-xl"
+                    >
+                        <Text className="text-orange-500 text-center font-semibold text-base">
+                            Go to Sign Up
+                        </Text>
+                    </Pressable>
+                </View>
             </View>
         );
     }
+
+
+    const handleLogout = async () => {
+        try {
+            await account.deleteSession('current');
+            router.replace('/sign-in'); // Change to your login route
+        } catch (error) {
+            console.error('Logout error:', error);
+        }
+    };
 
     return (
         <View className="flex-1 bg-white px-6 pt-16 items-center">
@@ -134,8 +164,49 @@ const Profile = () => {
             <Text className="text-base text-gray-500">{user.email}</Text>
 
             {/* ... your address editing and logout buttons ... */}
+            <View style={styles.logoutButton}>
+                <Pressable
+                    onPress={handleLogout}
+                    className="mt-8 bg-red-500 px-6 py-3 rounded-xl w-full"
+                >
+                    <Text className="text-white text-center font-semibold text-base">Log Out</Text>
+                </Pressable>
+            </View>
         </View>
     );
 };
 
 export default Profile;
+
+
+const styles = StyleSheet.create({
+    loader: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    container: {
+        flex: 1,
+        padding: 24,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    avatar: {
+        width: 120,
+        height: 120,
+        borderRadius: 60,
+        marginBottom: 20,
+    },
+    name: {
+        fontSize: 26,
+        fontWeight: '600',
+        marginBottom: 8,
+    },
+    email: {
+        fontSize: 18,
+        color: 'gray',
+    },
+    logoutButton: {
+        marginTop: 30,
+        width: '100%',
+    },
+});
